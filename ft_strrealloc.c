@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strrealloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sding <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/04 18:40:59 by sding             #+#    #+#             */
-/*   Updated: 2018/03/04 18:41:11 by sding            ###   ########.fr       */
+/*   Created: 2018/04/04 12:02:23 by sding             #+#    #+#             */
+/*   Updated: 2018/04/04 12:02:54 by sding            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+char	*ft_strrealloc(char *memory, size_t size)
 {
-	t_list		*list;
+	char	*bigger_memory;
 
-	if (!(list = (t_list *)malloc(sizeof(*list))))
-		return (NULL);
-	if (!content)
+	if (!memory)
 	{
-		list->content = NULL;
-		list->content_size = 0;
+		bigger_memory = ft_strnew(size);
+		return (bigger_memory);
 	}
-	else
-	{
-		if (!(list->content = malloc(content_size)))
-			return (NULL);
-		ft_memcpy(list->content, content, content_size);
-		list->content_size = content_size;
-	}
-	list->next = NULL;
-	return (list);
+	bigger_memory = ft_memalloc(ft_strlen(memory) + size);
+	return (bigger_memory);
 }
+
+/*
+** for the ft_strdel(&memory) == free(memory)
+*/

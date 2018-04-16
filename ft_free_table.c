@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_free_table.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sding <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/04 18:40:59 by sding             #+#    #+#             */
-/*   Updated: 2018/03/04 18:41:11 by sding            ###   ########.fr       */
+/*   Created: 2018/04/12 06:11:57 by sding             #+#    #+#             */
+/*   Updated: 2018/04/12 06:11:59 by sding            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+void	ft_free_table(char **table)
 {
-	t_list		*list;
+	int i;
 
-	if (!(list = (t_list *)malloc(sizeof(*list))))
-		return (NULL);
-	if (!content)
+	i = 0;
+	if (!table)
+		return ;
+	while (table[i])
 	{
-		list->content = NULL;
-		list->content_size = 0;
+		free(table[i]);
+		i++;
 	}
-	else
-	{
-		if (!(list->content = malloc(content_size)))
-			return (NULL);
-		ft_memcpy(list->content, content, content_size);
-		list->content_size = content_size;
-	}
-	list->next = NULL;
-	return (list);
+	free(table);
 }

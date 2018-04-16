@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstaddtoend.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sding <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/04 18:40:59 by sding             #+#    #+#             */
-/*   Updated: 2018/03/04 18:41:11 by sding            ###   ########.fr       */
+/*   Created: 2018/04/10 17:31:32 by sding             #+#    #+#             */
+/*   Updated: 2018/04/10 17:31:34 by sding            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+void	ft_lstaddtoend(t_list **lst, t_list *new)
 {
-	t_list		*list;
+	t_list	*tmp;
 
-	if (!(list = (t_list *)malloc(sizeof(*list))))
-		return (NULL);
-	if (!content)
+	if (!(*lst))
 	{
-		list->content = NULL;
-		list->content_size = 0;
+		*lst = new;
+		return ;
 	}
-	else
-	{
-		if (!(list->content = malloc(content_size)))
-			return (NULL);
-		ft_memcpy(list->content, content, content_size);
-		list->content_size = content_size;
-	}
-	list->next = NULL;
-	return (list);
+	tmp = *lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }

@@ -6,7 +6,7 @@
 /*   By: sding <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 16:17:00 by sding             #+#    #+#             */
-/*   Updated: 2018/03/03 16:17:12 by sding            ###   ########.fr       */
+/*   Updated: 2018/04/10 17:28:39 by sding            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,17 @@ char				*ft_malloc_word(char const *str, char c);
 char				*ft_strrev(char *str);
 void				ft_search_and_replace(char *d, char a, char b);
 void				ft_swap(int *a, int *b);
-void				ft_do_op(char *nb1, char *op, char *nb2);
+
+char				*ft_strndup(const char *s1, size_t n);
+char				*ft_strrealloc(char *memory, size_t size);
+int					ft_check_repeat(char *str, char c);
+void				ft_lstaddtoend(t_list **lst, t_list *new);
+void				ft_print_table(char **table);
+void				ft_free_table(char	**table);
+void				ft_putstrl(char const *s);
+void				ft_putnbrl(int n);
+void				ft_putcharl(char c);
+int					ft_strlen_til(char *str, char c);
+void				ft_putstr_db(char const *s, char *str);
 
 #endif

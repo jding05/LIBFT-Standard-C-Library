@@ -6,7 +6,7 @@
 #    By: sding <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/19 20:34:27 by sding             #+#    #+#              #
-#    Updated: 2018/02/22 21:36:27 by sding            ###   ########.fr        #
+#    Updated: 2018/04/10 17:28:02 by sding            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
 
-HEADER = libft.h
+INCLUDES = ./
 
 OBJS = $(SRC:.c=.o)
 
@@ -82,12 +82,22 @@ ft_malloc_word.c\
 ft_strrev.c\
 ft_search_and_replace.c\
 ft_swap.c\
-ft_do_op.c
+ft_strndup.c\
+ft_strrealloc.c\
+ft_check_repeat.c\
+ft_lstaddtoend.c\
+ft_print_table.c\
+ft_free_table.c\
+ft_putstrl.c\
+ft_putnbrl.c\
+ft_putcharl.c\
+ft_strlen_til.c\
+ft_putstr_db.c
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -c $(SRC) $(HEADER)
+	gcc $(FLAGS) -c $(SRC) -I$(INCLUDES)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 

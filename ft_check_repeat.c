@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_check_repeat.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sding <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/04 18:40:59 by sding             #+#    #+#             */
-/*   Updated: 2018/03/04 18:41:11 by sding            ###   ########.fr       */
+/*   Created: 2018/04/08 14:31:21 by sding             #+#    #+#             */
+/*   Updated: 2018/04/08 14:31:22 by sding            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
-{
-	t_list		*list;
+/*
+** if you can find the smae char c in the char *str, return (1)
+*/
 
-	if (!(list = (t_list *)malloc(sizeof(*list))))
-		return (NULL);
-	if (!content)
+int		ft_check_repeat(char *str, char c)
+{
+	while (*str)
 	{
-		list->content = NULL;
-		list->content_size = 0;
+		if (*str == c)
+			return (1);
+		str++;
 	}
-	else
-	{
-		if (!(list->content = malloc(content_size)))
-			return (NULL);
-		ft_memcpy(list->content, content, content_size);
-		list->content_size = content_size;
-	}
-	list->next = NULL;
-	return (list);
+	return (0);
 }
