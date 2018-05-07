@@ -40,6 +40,19 @@
 # define RESET		"\033[0m"
 
 /*
+** Underline
+*/
+
+# define UBLACK "\033[4;30m"
+# define URED "\033[4;31m"
+# define UGREEN "\033[4;32m"
+# define UYELLOW "\033[4;33m"
+# define UBLUE "\033[4;34m"
+# define UPURPLE "\033[4;35m"
+# define UCYAN "\033[4;36m"
+# define UWHITE "\033[4;37m"
+
+/*
 ** things to store 1. flag, field-width, precision, length
 ** enumeration (or enum) is a user defined data type in c
 **		it is mainly used to assign names to integral constants

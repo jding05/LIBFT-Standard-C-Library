@@ -13,6 +13,8 @@
 #ifndef FT_EXTRA_H
 # define FT_EXTRA_H
 
+# include "libft.h"
+
 int		    ft_check_repeat(char *str, char c);
 int		    ft_count_words(char const *str, char c);
 void	    ft_free_table(char **table);

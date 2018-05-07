@@ -70,6 +70,7 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -f $(OBJ)
+	@rm -f *.DS_Store
 	@echo "\033[32mRemoved Object Files\033[0m"
 
 fclean: clean

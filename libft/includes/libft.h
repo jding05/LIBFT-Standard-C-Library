@@ -20,6 +20,7 @@
 
 # include "ft_libc.h"
 # include "ft_add_on.h"
+# include "ft_extra.h"
 # include "lst.h"
 # include "get_next_line.h"
 # include "ft_printf.h"
