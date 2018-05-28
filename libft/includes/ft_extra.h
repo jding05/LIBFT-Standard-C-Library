@@ -6,7 +6,7 @@
 /*   By: sding <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/01 17:21:54 by sding             #+#    #+#             */
-/*   Updated: 2018/05/01 17:21:56 by sding            ###   ########.fr       */
+/*   Updated: 2018/05/28 16:13:24 by sding            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,10 @@ int		    ft_strlen_til(char *str, char c);
 char		*ft_strrev(char *str);
 void	    ft_swap(int *a, int *b);
 size_t	    ft_wstrlen(wchar_t *wstr);
+
+int			ft_is_delim(char c, char *delims);
+int			ft_count_words_by_delims(char const *str, char *delims);
+char		*ft_malloc_word_by_delims(char const *str, char *delims);
+char		**ft_strsplit_by_delims(char const *s, char *delims);
 
 #endif

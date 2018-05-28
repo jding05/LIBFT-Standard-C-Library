@@ -6,7 +6,7 @@
 #    By: sding <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/19 20:34:27 by sding             #+#    #+#              #
-#    Updated: 2018/04/10 17:28:02 by sding            ###   ########.fr        #
+#    Updated: 2018/05/28 16:14:06 by sding            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ FT_EXTRA	:=	ft_count_words ft_malloc_word ft_strrev ft_search_and_replace	\
 				ft_swap ft_realloc ft_check_repeat ft_print_table ft_free_table	\
 				ft_putstrl ft_putnbrl ft_putcharl ft_strlen_til ft_putstr_db	\
 				ft_putnstr ft_putnbr_intmax_t ft_nbrlen ft_putwchar ft_putwstr	\
-				ft_wstrlen ft_putnwstr ft_itoa_base_uint ft_putnbr_uintmax_t
+				ft_wstrlen ft_putnwstr ft_itoa_base_uint ft_putnbr_uintmax_t	\
+				ft_strsplit_by_delims
 
 GNL			:=	get_next_line
 
