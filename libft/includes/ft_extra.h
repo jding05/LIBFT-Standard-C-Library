@@ -6,7 +6,7 @@
 /*   By: sding <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/01 17:21:54 by sding             #+#    #+#             */
-/*   Updated: 2018/05/28 16:13:24 by sding            ###   ########.fr       */
+/*   Updated: 2018/06/27 10:20:29 by sding            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ int			ft_is_delim(char c, char *delims);
 int			ft_count_words_by_delims(char const *str, char *delims);
 char		*ft_malloc_word_by_delims(char const *str, char *delims);
 char		**ft_strsplit_by_delims(char const *s, char *delims);
+char		**ft_copy_table(char **table1, char **table2);
+char		**ft_dbarray_merge(char **dbarray1, char **dbarray2);
 
 #endif
